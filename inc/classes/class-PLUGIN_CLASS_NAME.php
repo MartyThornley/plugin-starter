@@ -32,7 +32,7 @@ class PLUGIN_CLASS_NAME {
 
 		$this->name 			= '_PLUGIN_SLUG_';
 		$this->version 			= '_PLUGIN_VERSION_';
-		$this->domain 			= $this->plugin_name;
+		$this->domain 			= $this->name;
 
 		$this->dir 				= plugin_dir_path( dirname( __FILE__ ) );
 		$this->url 				= WP_PLUGIN_URL . '/' . str_replace( basename( __FILE__ ) , "" , plugin_basename(__FILE__) );
@@ -94,7 +94,7 @@ class PLUGIN_CLASS_NAME {
 		/**
 		 * Include from plugin if it is not in child theme or parent theme
 		 */
-		} elseif ( file_exists( trailingslashit( $this->views_dir ) .  $view ) ) {
+		} elseif ( file_exists( trailingslashit( $this->views ) .  $view ) ) {
 			include( trailingslashit( $this->views_dir ) . $view );
 		}
 	}		

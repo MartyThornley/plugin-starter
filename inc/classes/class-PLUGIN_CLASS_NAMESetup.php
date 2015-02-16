@@ -78,7 +78,7 @@ class PLUGIN_CLASS_NAMESetup extends PLUGIN_CLASS_NAME {
 	 */
 	public function load_plugin_textdomain() {
 	
-		load_plugin_textdomain( $this->domain, false, $this->plugin_dir . '/languages/' );
+		load_plugin_textdomain( $this->domain, false, $this->dir . '/languages/' );
 
 	}
 

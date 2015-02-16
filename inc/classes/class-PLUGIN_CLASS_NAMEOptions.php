@@ -22,7 +22,7 @@ class PLUGIN_CLASS_NAMEOptions extends PLUGIN_CLASS_NAME {
 	
 	}	
 
-	public function get_option( $name ) {
-
+	public function get_option() {
+		
 	}	
 }
