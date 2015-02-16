@@ -52,7 +52,7 @@ class PLUGIN_CLASS_NAMESetup extends PLUGIN_CLASS_NAME {
 		if ( get_option( $this->domain . '_plugin_activated' ) != 'activated' ) {
 			
 			require_once( $this->plugin_dir . 'inc/classes/class-PLUGIN_CLASS_NAMEActivator.php' );
-			$_PLUGIN_FUNCTION_NAME_activator = new PLUGIN_CLASS_NAMEActivator;		
+			new PLUGIN_CLASS_NAMEActivator;		
 			
 			update_option( $this->domain . '_plugin_activated' , 'activated' );
 			update_option( $this->domain . '_plugin_version' , $this->version );
@@ -60,7 +60,7 @@ class PLUGIN_CLASS_NAMESetup extends PLUGIN_CLASS_NAME {
 		} elseif ( get_option( $this->domain . '_plugin_version' ) < $this->version ) {
 			
 			require_once( $this->plugin_dir . 'inc/classes/class-PLUGIN_CLASS_NAMEUpdate.php' );
-			$_PLUGIN_FUNCTION_NAME_update = new PLUGIN_CLASS_NAMEUpdate;
+			new PLUGIN_CLASS_NAMEUpdate;
 			
 			update_option( $this->domain . '_plugin_version' , $this->version );
 		} 
