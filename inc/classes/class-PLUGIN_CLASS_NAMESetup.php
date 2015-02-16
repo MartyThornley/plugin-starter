@@ -51,7 +51,7 @@ class PLUGIN_CLASS_NAMESetup extends PLUGIN_CLASS_NAME {
 	
 		if ( get_option( $this->domain . '_plugin_activated' ) != 'activated' ) {
 			
-			require_once( $this->plugin_dir . 'inc/classes/class-PLUGIN_CLASS_NAMEActivator.php' );
+			require_once( $this->dir . 'inc/classes/class-PLUGIN_CLASS_NAMEActivator.php' );
 			new PLUGIN_CLASS_NAMEActivator;		
 			
 			update_option( $this->domain . '_plugin_activated' , 'activated' );
@@ -59,7 +59,7 @@ class PLUGIN_CLASS_NAMESetup extends PLUGIN_CLASS_NAME {
 			
 		} elseif ( get_option( $this->domain . '_plugin_version' ) < $this->version ) {
 			
-			require_once( $this->plugin_dir . 'inc/classes/class-PLUGIN_CLASS_NAMEUpdate.php' );
+			require_once( $this->dir . 'inc/classes/class-PLUGIN_CLASS_NAMEUpdate.php' );
 			new PLUGIN_CLASS_NAMEUpdate;
 			
 			update_option( $this->domain . '_plugin_version' , $this->version );
@@ -87,7 +87,7 @@ class PLUGIN_CLASS_NAMESetup extends PLUGIN_CLASS_NAME {
 	 */
 	public function load_options() {
 		global $bb_tag_options;
-		require_once ( $this->plugin_dir . 'modules-options/class-PLUGIN_CLASS_NAMEOptions.php' );
+		require_once ( $this->dir . 'inc/classes/class-PLUGIN_CLASS_NAMEOptions.php' );
 		$this->options = new PLUGIN_CLASS_NAMEOptions( );	
 	}	
 
@@ -95,7 +95,7 @@ class PLUGIN_CLASS_NAMESetup extends PLUGIN_CLASS_NAME {
 	 * Dashboard functionality.
 	 */
 	public function admin() {
-		require_once ( $this->plugin_dir . 'modules-admin/class-PLUGIN_CLASS_NAMEAdmin.php' );
+		require_once ( $this->dir . 'inc/classes/class-PLUGIN_CLASS_NAMEAdmin.php' );
 		$this->admin = new PLUGIN_CLASS_NAMEAdmin( );
 	}
 
@@ -103,7 +103,7 @@ class PLUGIN_CLASS_NAMESetup extends PLUGIN_CLASS_NAME {
 	 * Public-facing functionality
 	 */
 	public function frontend() {
-		require_once ( $this->plugin_dir . 'modules-frontend/class-PLUGIN_CLASS_NAMEFrontEnd.php' );
+		require_once ( $this->dir . 'inc/classes/class-PLUGIN_CLASS_NAMEFrontEnd.php' );
 		$this->front = new PLUGIN_CLASS_NAMEFrontEnd( );
 	}
 

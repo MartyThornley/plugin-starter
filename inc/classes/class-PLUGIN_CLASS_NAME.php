@@ -34,7 +34,7 @@ class PLUGIN_CLASS_NAME {
 		$this->version 			= '_PLUGIN_VERSION_';
 		$this->domain 			= $this->name;
 
-		$this->dir 				= plugin_dir_path( dirname( __FILE__ ) );
+		$this->dir 				= plugin_dir_path( dirname( dirname( __FILE__ ) ) );
 		$this->url 				= WP_PLUGIN_URL . '/' . str_replace( basename( __FILE__ ) , '' , plugin_basename( __FILE__ ) );
 
 		$this->stylesheet_dir 	= get_stylesheet_directory();
