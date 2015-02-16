@@ -35,7 +35,7 @@ class PLUGIN_CLASS_NAME {
 		$this->domain 			= $this->name;
 
 		$this->dir 				= plugin_dir_path( dirname( __FILE__ ) );
-		$this->url 				= WP_PLUGIN_URL . '/' . str_replace( basename( __FILE__ ) , "" , plugin_basename(__FILE__) );
+		$this->url 				= WP_PLUGIN_URL . '/' . str_replace( basename( __FILE__ ) , '' , plugin_basename( __FILE__ ) );
 
 		$this->stylesheet_dir 	= get_stylesheet_directory();
 		$this->template_dir 	= get_template_directory();
@@ -74,27 +74,16 @@ class PLUGIN_CLASS_NAME {
 	 */
 	public function get_view( $view ) {
 		
-		/**
-		 * Add .php extension
-		 */
+		// Add .php extension
 		$view = $view . '.php';
 		
-		/**
-		 * Include file if exists in child theme
-		 */
-		if ( file_exists( trailingslashit( $this->stylesheet_dir ). $view ) ) {
+		if ( file_exists( trailingslashit( $this->stylesheet_dir ). $view ) ) { 		// Include file if exists in child theme
 			include( trailingslashit( $this->stylesheet_dir ) . $view );
-			
-		/**
-		 * Include file if exists in parent theme
-		 */
-		} elseif ( file_exists( trailingslashit( $this->template_dir  ) . $view ) ) {
+		
+		} elseif ( file_exists( trailingslashit( $this->template_dir  ) . $view ) ) {	// Include file if exists in parent theme
 			include( trailingslashit( $this->template_dir ) . $view );
 			
-		/**
-		 * Include from plugin if it is not in child theme or parent theme
-		 */
-		} elseif ( file_exists( trailingslashit( $this->views ) .  $view ) ) {
+		} elseif ( file_exists( trailingslashit( $this->views ) .  $view ) ) { 			// Include from plugin if it is not in child theme or parent theme
 			include( trailingslashit( $this->views_dir ) . $view );
 		}
 	}		
