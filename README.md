@@ -1,9 +1,15 @@
 # Plugin Starter
 A set of starter files for faster WordPress plugin development.
 
-To use simply copy the files into your plugins folder and replace the placeholders with version of your plugin's name as described below.
+This project owes a quick nod of the head to the Plugin Boilerplate project by Tom McFarlin. While not a direct fork or reworking of it, that project was a jumping off point and provided some things I liked. But it had enough that I thought could be improved upon, that I just started off in my own direction.
 
-After that, nodify the classes and fucntions as you see fit.
+## How to use 
+
+**Install**
+* Create a new plugin folder /wp-content/plugins/my-new-plugin 
+* Copy the files into your plugin folder
+* Replace the placeholder text with a version of your plugin's name as described below.
+* Modify the classes and functions as you see fit.
 
 **Do bulk search and replace for the following in all files**
 * _PLUGIN_TITLE_ 			readable title of plugin "My Plugin Name"
@@ -16,7 +22,15 @@ After that, nodify the classes and fucntions as you see fit.
 * Replace PLUGIN_CLASS_NAME - ( all files in inc/classes )
 * Replace PLUGIN_SLUG_NAME - ( main file in base folder )
 
-**Class Structure**
+**Staying up to date with the latest**
+
+Because this is just a starting point, you do not want to clone the repo directly into your plugin.
+
+If you want to clone this repo to stay up to date: 
+* Clone it somewhere else locally
+* When you want to use it, just copy the files over where needed
+
+## Class Structure
 
 *class-PluginClassName.php*
 
